@@ -3,10 +3,6 @@ var hourHand = document.querySelector('.hour-hand');
 var minHand = document.querySelector('.min-hand');
 var secondHand = document.querySelector('.second-hand');
 
-document.addEventListener('DOMContentLoaded', showTime)
-
-setInterval(showTime, 1000);
-
 function showTime(){
   const currTime = new Date();
   const seconds = currTime.getSeconds();
@@ -21,3 +17,5 @@ function showTime(){
   const hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30) + 90;
   hourHand.style.transform = `rotate(${Math.floor(hoursDegrees)}deg)`;
 }
+setInterval(showTime, 1000);
+showTime()
